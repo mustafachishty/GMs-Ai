@@ -1,47 +1,51 @@
 # GM's AI Chatbot
 
-Professional ChatGPT/Gemini-style AI chatbot with LongCat API integration.
+Professional Next.js AI chatbot with LongCat API integration.
 
-## 🚀 Deploy to Vercel
+## 🚀 One-Click Deploy
 
-### Method 1: Vercel CLI
-```bash
-npm i -g vercel
-vercel login
-vercel --prod
-```
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/mustafachishty/GMs-Ai)
 
-### Method 2: GitHub + Vercel
-1. Upload this folder to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Click "New Project" → Import from GitHub
-4. Deploy automatically
+## 📁 Project Structure
 
-## 📁 Files Structure
 ```
 GM's-Ai/
-├── index.html          # Main chatbot interface
-├── script.js           # Frontend JavaScript
-├── styles.css          # Styling
-├── api/chat.js         # Vercel serverless function
-├── vercel.json         # Vercel configuration
-├── package.json        # Dependencies
-└── README.md           # This file
+├── 📁 app/                          # Next.js App Router
+│   ├── 📁 api/chat/                 # API Routes
+│   │   └── 📄 route.js              # Chat API endpoint
+│   ├── 📄 layout.tsx                # Root layout
+│   ├── 📄 page.tsx                  # Homepage
+│   └── 📄 globals.css               # Global styles
+│
+├── 📁 components/                   # React Components
+│   └── 📄 ChatInterface.tsx         # Main chat component
+│
+├── 📁 public/                       # Static Assets
+│   └── 📄 script.js                 # Client-side scripts
+│
+├── 📄 package.json                  # Dependencies & scripts
+├── 📄 next.config.mjs               # Next.js configuration
+├── 📄 tsconfig.json                 # TypeScript config
+└── 📄 README.md                     # This file
 ```
 
 ## 🔧 Local Development
+
 ```bash
 npm install
-npm start
+npm run dev
 # Open http://localhost:3000
 ```
 
 ## ✨ Features
-- Professional ChatGPT/Gemini-style interface
-- Chat sessions with rename/delete
-- Mobile responsive design
+
+- Professional ChatGPT-style interface
+- Next.js 14 with App Router
+- TypeScript support
 - LongCat API integration
-- Smooth animations
+- One-click Vercel deployment
+- Mobile responsive design
 
 ## 🌐 Live Demo
+
 After deployment: `https://your-project-name.vercel.app`
