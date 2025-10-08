@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GM's AI - Professional AI Assistant</title>
+  <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaZOJI_i4ZW-KqWoILPAaKyH-netdReiaatVKwlfpMw0w51PpHzIazpyM&s" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-overlay" class="mobile-overlay"></div>
+  
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaZOJI_i4ZW-KqWoILPAaKyH-netdReiaatVKwlfpMw0w51PpHzIazpyM&s" alt="GM's AI Logo" />
+          </div>
+          <span class="logo-text">GM's AI</span>
+        </div>
+        <button id="sidebar-close-btn" class="sidebar-close-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+        <button id="new-chat-btn" class="new-chat-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+          <span>New Chat</span>
+        </button>
+      </div>
+      
+      <div class="chat-history">
+        <div class="history-section">
+          <h3>Today</h3>
+          <div id="chat-list" class="chat-list"></div>
+        </div>
+      </div>
+      
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">GM</div>
+          <div class="user-info">
+            <span class="user-name">GM's Assistant</span>
+            <span class="user-status">Online</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="chat-header">
+        <div class="header-content">
+          <div class="chat-title">
+            <h1 id="current-chat-title">New Chat</h1>
+            <span class="model-info">Powered by Mr. GM.</span>
+          </div>
+          <div class="header-actions">
+            <button id="rename-chat-btn" class="header-btn" title="Rename chat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>
+              </svg>
+            </button>
+            <button id="delete-chat-btn" class="header-btn" title="Delete chat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6h14ZM10 11v6M14 11v6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Chat Area -->
+      <div id="chat-wrapper" class="chat-wrapper">
+        <div id="chat-container" class="chat-container">
+          <!-- Welcome Screen -->
+          <div id="welcome-screen" class="welcome-screen">
+            <div class="welcome-content">
+              <div class="welcome-icon">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaZOJI_i4ZW-KqWoILPAaKyH-netdReiaatVKwlfpMw0w51PpHzIazpyM&s" alt="GM's AI Logo" />
+              </div>
+              <h2>Welcome to GM's AI</h2>
+              <p>Your intelligent assistant powered by advanced AI. How can I help you today?</p>
+              
+              <div class="suggestion-cards">
+                <div class="suggestion-card" data-prompt="Explain quantum computing in simple terms">
+                  <div class="card-icon">🔬</div>
+                  <h4>Explain Concepts</h4>
+                  <p>Break down complex topics into simple explanations</p>
+                </div>
+                <div class="suggestion-card" data-prompt="Write a creative story about space exploration">
+                  <div class="card-icon">✍️</div>
+                  <h4>Creative Writing</h4>
+                  <p>Generate stories, poems, and creative content</p>
+                </div>
+                <div class="suggestion-card" data-prompt="Help me build a responsive website">
+                  <div class="card-icon">💻</div>
+                  <h4>Code Assistant</h4>
+                  <p>Programming help, debugging, and code reviews</p>
+                </div>
+                <div class="suggestion-card" data-prompt="Plan a productive daily schedule">
+                  <div class="card-icon">📅</div>
+                  <h4>Planning & Organization</h4>
+                  <p>Organize tasks, schedules, and workflows</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <footer class="input-section">
+        <div class="input-container">
+          <form id="message-form" class="message-form">
+            <div class="input-wrapper">
+              <textarea 
+                id="message-input"
+                placeholder="Message GM's AI..."
+                rows="1"
+                maxlength="4000"
+              ></textarea>
+              <button type="submit" id="send-btn" class="send-btn" disabled>
+                <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+          <div class="input-footer">
+            <span class="disclaimer">GM's AI can make mistakes. Consider checking important information.</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Rename Modal -->
+  <div id="rename-modal" class="modal">
+    <div class="modal-content">
+      <h3>Rename Chat</h3>
+      <input type="text" id="rename-input" placeholder="Enter new chat name..." />
+      <div class="modal-actions">
+        <button id="cancel-rename" class="btn-secondary">Cancel</button>
+        <button id="confirm-rename" class="btn-primary">Rename</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
