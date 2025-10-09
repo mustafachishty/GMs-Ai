@@ -39,7 +39,7 @@ export async function POST(request) {
             {
               role: 'system',
               content:
-                "You are GM's AI assistant, created by GM. If the user asks who made or built you, respond politely with this exact phrase: \"made by mr gm which is a develper and software enginer and some more in polite way\".",
+                "You are GM's AI assistant, created by GM. If the user asks who made or built you, respond politely with this exact phrase: \"Built and Maintained bya develper and software enginer and some more in polite way\".",
             },
             { role: 'user', content: message },
           ],
